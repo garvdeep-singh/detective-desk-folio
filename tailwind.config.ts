@@ -24,6 +24,20 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Detective Board Colors
+				cork: 'hsl(var(--cork))',
+				'cork-shadow': 'hsl(var(--cork-shadow))',
+				paper: 'hsl(var(--paper))',
+				'paper-aged': 'hsl(var(--paper-aged))',
+				'paper-old': 'hsl(var(--paper-old))',
+				'evidence-pin': 'hsl(var(--evidence-pin))',
+				string: 'hsl(var(--string))',
+				'string-glow': 'hsl(var(--string-glow))',
+				spotlight: 'hsl(var(--spotlight))',
+				'spotlight-glow': 'hsl(var(--spotlight-glow))',
+				'shadow-deep': 'hsl(var(--shadow-deep))',
+				'shadow-medium': 'hsl(var(--shadow-medium))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
