@@ -25,6 +25,27 @@ export const DetectiveBoard = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden cursor-detective">
+      {/* Top Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur border-b border-muted-foreground/20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex h-14 items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 bg-primary rounded-full shadow-[0_0_6px_hsl(var(--string-glow)/0.9)]" />
+              <span className="typewriter font-bold tracking-wide">Detective Portfolio</span>
+            </div>
+            <div className="hidden md:flex items-center gap-6 typewriter text-sm">
+              <button onClick={() => openModal('case-file')} className="hover:underline underline-offset-4">Case File</button>
+              <button onClick={() => openModal('skills')} className="hover:underline underline-offset-4">Skills</button>
+              <button onClick={() => openModal('project', { title: 'Ikipendence Wall', image: projectIkipendence })} className="hover:underline underline-offset-4">Projects</button>
+              <button onClick={() => openModal('achievements')} className="hover:underline underline-offset-4">Achievements</button>
+              <button onClick={() => openModal('contact')} className="hover:underline underline-offset-4">Contact</button>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button size="sm" variant="outline" className="typewriter hidden md:inline-flex" onClick={() => openModal('case-file')}>Open Case</Button>
+            </div>
+          </div>
+        </div>
+      </nav>
       {/* Spotlight effect */}
       <div className="absolute inset-0 spotlight pointer-events-none" />
       
@@ -32,7 +53,7 @@ export const DetectiveBoard = () => {
       <div className="absolute inset-0 cork-texture" />
       
       {/* Investigation strings - background layer */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+      <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
         {/* String from case file to skills report */}
         <line x1="50%" y1="45%" x2="15%" y2="25%" className="stroke-string stroke-1 opacity-80" />
         
@@ -47,15 +68,15 @@ export const DetectiveBoard = () => {
       </svg>
       
       {/* Evidence pins and items */}
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 pt-20 md:pt-24 pb-8 min-h-screen">
         
         {/* Central Case File (About Me) */}
         <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+          className="md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 cursor-pointer mx-auto md:mx-0 mt-6 md:mt-0 max-w-[20rem]"
           onClick={() => openModal('case-file')}
         >
           <div className="evidence-pin -top-2 -left-2" />
-          <div className="case-file p-6 w-80 h-96 relative">
+          <div className="case-file p-6 w-72 h-[22rem] sm:w-80 sm:h-96 relative">
             <div className="absolute top-2 left-4 w-16 h-6 bg-paper-old border border-muted-foreground/30 rounded-sm">
               <div className="typewriter text-xs text-center pt-1">CASE FILE</div>
             </div>
@@ -84,7 +105,7 @@ export const DetectiveBoard = () => {
         
         {/* Skills Report (Top Left) */}
         <div 
-          className="absolute top-16 left-16 cursor-pointer"
+          className="hidden md:block absolute top-16 left-16 cursor-pointer"
           onClick={() => openModal('skills')}
         >
           <div className="evidence-pin -top-2 -left-2" />
@@ -125,7 +146,7 @@ export const DetectiveBoard = () => {
         
         {/* Project Evidence (Top Right) */}
         <div 
-          className="absolute top-20 right-20 cursor-pointer"
+          className="hidden md:block absolute top-20 right-20 cursor-pointer"
           onClick={() => openModal('project', { title: 'Ikipendence Wall', image: projectIkipendence })}
         >
           <div className="evidence-pin -top-2 -left-2" />
@@ -138,7 +159,7 @@ export const DetectiveBoard = () => {
         </div>
         
         <div 
-          className="absolute top-32 right-32 cursor-pointer"
+          className="hidden md:block absolute top-32 right-32 cursor-pointer"
           onClick={() => openModal('project', { title: 'Personality Game', image: projectPersonality })}
         >
           <div className="evidence-pin -top-2 -left-2" />
@@ -152,7 +173,7 @@ export const DetectiveBoard = () => {
         
         {/* Achievement Map (Bottom Left) */}
         <div 
-          className="absolute bottom-16 left-20 cursor-pointer"
+          className="hidden md:block absolute bottom-16 left-20 cursor-pointer"
           onClick={() => openModal('achievements')}
         >
           <div className="evidence-pin -top-2 -left-2" />
@@ -166,7 +187,7 @@ export const DetectiveBoard = () => {
         
         {/* Contact Business Card (Bottom Right) */}
         <div 
-          className="absolute bottom-20 right-24 cursor-pointer"
+          className="hidden md:block absolute bottom-20 right-24 cursor-pointer"
           onClick={() => openModal('contact')}
         >
           <div className="evidence-pin -top-2 -left-2" />
